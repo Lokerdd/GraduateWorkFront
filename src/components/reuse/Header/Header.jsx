@@ -13,7 +13,11 @@ function Header() {
   } = useSelector((state) => state.auth);
 
   return (
-    <div>lol</div>
+    <div className='container'>
+      <img src='/assets/images/logo.svg'>
+
+      </img>
+    </div>
   );
 }
 

@@ -5,6 +5,7 @@ import MainPage from './pages/MainPage';
 import Layout from './components/reuse/Layout';
 
 import './App.css';
+import './main.css';
 
 function App() {
   return (
