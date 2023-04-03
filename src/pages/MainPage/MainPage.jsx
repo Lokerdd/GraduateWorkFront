@@ -5,7 +5,7 @@ import './MainPage.css';
 function MainPage() {
   return (
     <div className="container">
-      lol
+      
     </div>
   );
 }
