@@ -4,7 +4,7 @@ import './MainPage.css';
 
 function MainPage() {
   return (
-    <div className="container">
+    <div className='main-page'>
       lol
     </div>
   );
