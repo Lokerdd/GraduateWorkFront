@@ -1,0 +1,11 @@
+@mixin mainRedIcon {
+  filter: brightness(0) saturate(100%) invert(31%) sepia(96%) saturate(1065%) hue-rotate(326deg) brightness(106%) contrast(86%);
+}
+
+@mixin lightGreyIcon {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(6%) saturate(12%) hue-rotate(20deg) brightness(111%) contrast(82%);
+}
+
+@mixin wightColorIcon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(638%) hue-rotate(329deg) brightness(115%) contrast(100%);
+}

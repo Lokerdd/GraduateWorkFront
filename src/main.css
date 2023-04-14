@@ -1,8 +1,0 @@
-.container {
-  width: calc((1120 / 1440) * 100%);
-  margin: 0 auto;
-}
-
-body {
-  font-family: 'Jost' !important;
-}

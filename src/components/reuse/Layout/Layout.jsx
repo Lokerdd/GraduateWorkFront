@@ -5,13 +5,13 @@ import Header from '../Header';
 // import CustomModal from '../CustomModal';
 
 function Layout() {
-  return (
-    <>
-      {/* <CustomModal /> */}
-      <Header />
-      <Outlet />
-    </>
-  );
+	return (
+		<>
+			{/* <CustomModal /> */}
+			<Header />
+			<Outlet />
+		</>
+	);
 }
 
 export default memo(Layout);

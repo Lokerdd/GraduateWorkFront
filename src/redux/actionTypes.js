@@ -1,0 +1,1 @@
+export const CHANGE_APP_TYPE = 'CHANGE_APP_TYPE';
