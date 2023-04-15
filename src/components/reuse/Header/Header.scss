@@ -31,6 +31,7 @@
 			line-height: 24px;
 			color: $lightTextColor;
 			font-weight: 600;
+			cursor: pointer;
 
 			img {
 				@include lightGreyIcon;
@@ -51,6 +52,11 @@
 				}
 			}
 		}
+
+		.link.active {
+			color: $whiteColor;
+			border-color: $whiteColor;
+		}
 	};
 
 	&.white{
@@ -58,6 +64,18 @@
 
 		.app-type {
 			border-color: $borderLightColor;
+
+			button.active {
+				color: $mainRedTheme;
+				img {
+					@include mainRedIcon;
+				}
+			}
+		}
+
+		.link.active {
+			color: $mainRedTheme;
+			border-color: $mainRedTheme;
 		}
 	}
 }

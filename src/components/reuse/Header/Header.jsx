@@ -1,9 +1,9 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
 
 import { changeAppType } from '../../../redux/actions/app';
+import NavMenu from './NavMenu';
 
 import {
 	HEADER_RED,
@@ -39,9 +39,9 @@ function Header() {
 		}
 	}, [location.pathname]);
 
-	const handleAppTypeButtonClick = (newAppType) => {
+	const handleAppTypeButtonClick = useCallback((newAppType) => {
 		dispatch(changeAppType(newAppType));
-	};
+	}, []);
 
 	return (
 		<div className={`header ${type === HEADER_RED ? HEADER_RED : HEADER_WHITE}`}>
@@ -63,6 +63,7 @@ function Header() {
 						<img src="/assets/icons/manga-link-icon.svg" alt="" />
 					</button>
 				</div>
+				<NavMenu />
 			</div>
 		</div>
 	);
