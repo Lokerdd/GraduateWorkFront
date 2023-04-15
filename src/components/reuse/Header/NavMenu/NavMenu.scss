@@ -1,0 +1,54 @@
+@import '../../../../styles/constants.scss';
+
+.links {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 60px;
+
+  .link {
+    text-decoration: none;
+    color: $lightTextColor;
+    line-height: 70px;
+
+    &.active {
+      border-bottom: 2px solid;
+    }
+  }
+
+  .search-button {
+    background: none;
+    border: none;
+    height: min-content;
+    width: min-content;
+    cursor: pointer;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    width: 390px;
+
+    .search-field {
+      height: 34px;
+      border: none;
+      width: 100%;
+      padding: 0 20px;
+      background-color: $searchStrokeBackground;
+      font-size: 12px;
+    }
+
+    .close-search {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      width: min-content;
+      height: min-content;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+} 

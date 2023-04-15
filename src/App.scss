@@ -1,0 +1,21 @@
+* {
+	font-family: 'Jost';
+	box-sizing: border-box;
+}
+
+.container {
+	width: calc((1120 / 1440) * 100%);
+	margin: 0 auto;
+}
+
+button {
+	font-family: 'Jost';
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+ul, li {
+	padding: 0;
+	margin: 0;
+}

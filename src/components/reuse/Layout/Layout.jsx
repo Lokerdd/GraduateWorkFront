@@ -2,16 +2,16 @@ import React, { memo } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Header from '../Header';
-
-import './Layout.css';
+// import CustomModal from '../CustomModal';
 
 function Layout() {
-  return (
-    <div className="container layout">
-      <Header />
-      <Outlet />
-    </div>
-  );
+	return (
+		<>
+			{/* <CustomModal /> */}
+			<Header />
+			<Outlet />
+		</>
+	);
 }
-  
+
 export default memo(Layout);
