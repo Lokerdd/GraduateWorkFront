@@ -3,6 +3,8 @@
 const initialState = {
 	authUser: {
 		name: 'Vitya',
+		email: 'pupsik2002@gmail.com',
+		avatar: null,
 	},
 	isLoading: false,
 	error: null,

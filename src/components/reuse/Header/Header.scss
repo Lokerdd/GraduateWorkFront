@@ -57,10 +57,17 @@
 			color: $whiteColor;
 			border-color: $whiteColor;
 		}
+
+		.user {
+			.sign-in {
+				color: $whiteColor;
+			}
+		}
 	};
 
 	&.white{
 		background-color: $whiteColor;
+		border-bottom: 1px solid $borderLightColor;
 
 		.app-type {
 			border-color: $borderLightColor;
@@ -76,6 +83,26 @@
 		.link.active {
 			color: $mainRedTheme;
 			border-color: $mainRedTheme;
+		}
+
+		.user {
+			.sign-in {
+				color: $mainRedTheme;
+			}
+
+			.profile .arrow {
+				@include darkGreyIcon;
+			}
+		}
+
+		.search-bar {
+			.search-field {
+				border: 2px solid $borderLightColor;
+			}
+
+			.close-search {
+				@include borderLightIcon;
+			}
 		}
 	}
 }

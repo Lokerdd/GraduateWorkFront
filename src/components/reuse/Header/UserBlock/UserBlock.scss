@@ -1,0 +1,91 @@
+@import '../../../../styles/constants.scss';
+@import '../../../../styles/mixins.scss';
+
+.user {
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 70px;
+
+  .sign-in {
+    padding: 0 20px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    line-height: 70px;
+    font-weight: 600;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    position: relative;
+    z-index: 2;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+    }
+
+    .arrow {
+      width: 16px;
+      height: 16px;
+
+      &.open {
+        @include darkGreyIcon;
+      }
+    }
+  }
+
+  .modal {
+    background-color: $whiteColor;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .user-info {
+      padding: 10px;
+      padding-right: 115px;
+      display: flex;
+      flex-direction: column;
+      height: 70px;
+      border: 1px solid $borderLightColor;
+      border-bottom: none;
+
+      .name {
+        color: $darkTextColor;
+      }
+
+      .email {
+        font-weight: 400;
+      }
+    }
+
+    .links {
+      list-style: none;
+      display: flex;
+      row-gap: 20px;
+      flex-direction: column;
+      align-items: start;
+      padding: 30px 10px;
+      border: 1px solid $borderLightColor;
+
+      .link {
+        display: block;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        column-gap: 32px;
+        color: $darkTextColor;
+
+        img {
+          @include darkGreyIcon;
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

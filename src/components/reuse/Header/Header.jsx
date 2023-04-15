@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { changeAppType } from '../../../redux/actions/app';
 import NavMenu from './NavMenu';
+import UserBlock from './UserBlock';
 
 import {
 	HEADER_RED,
@@ -64,6 +65,7 @@ function Header() {
 					</button>
 				</div>
 				<NavMenu />
+				<UserBlock />
 			</div>
 		</div>
 	);
