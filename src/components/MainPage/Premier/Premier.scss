@@ -1,0 +1,88 @@
+@import '../../../styles/constants.scss';
+
+.premier {
+	height: 845px;
+	width: 100%;
+	background-image: url('/../public/assets/images/premier-background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+
+	.container {
+		padding-top: 230px;
+
+		.data {
+			width: 460px;
+			display: flex;
+			flex-direction: column;
+			
+			.header {
+				color: $mainRedTheme;
+				font-size: 80px;
+				font-weight: 900;
+				line-height: 116px;
+				text-transform: uppercase;
+				margin-bottom: 50px;
+				position: relative;
+
+				&::after {
+					content: '';
+					display: block;
+					width: 430px;
+					height: 23px;
+					background-color: $mainRedTheme;
+					position: absolute;
+					bottom: -23px;
+					left: 15px;
+					transform: skewX(-45deg);
+				}
+			}
+
+			.name {
+				color: $darkTextColor;
+				font-size: 40px;
+				line-height: 40px;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+
+			.seasons {
+				color: $lightTextColor;
+				font-size: 24px;
+				line-height: 35px;
+				font-weight: 600;
+				text-transform: uppercase;
+				margin-bottom: 20px;
+			}
+
+			.description {
+				color: $darkTextColor;
+				font-size: 16px;
+				font-weight: 400;
+				margin-bottom: 54px;
+			}
+
+			.watch {
+				height: 70px;
+				padding: 0 24px 0 20px;
+				background-color: $mainRedTheme;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				span {
+					color: $whiteColor;
+					font-size: 24px;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+
+	&-image {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: 780px;
+	}
+}
