@@ -2,41 +2,17 @@
 @import '../../../styles/mixins.scss';
 
 .header {
+	position: sticky;
+	top: 0;
+	z-index: 10;
 	.container {
 		display: flex;
 		align-items: center;
-		column-gap: 40px;
-		height: 70px;
+		justify-content: space-between;
+		column-gap: calc(40/1440*100vw);
+		height: calc(70/1440*100vw);
 		color: $lightTextColor;
 		font-weight: 700;
-	}
-
-	.app-type {
-		display: flex;
-		align-items: center;
-		column-gap: 40px;
-		padding: 0 40px;
-		border: 2px solid;
-		border-bottom: none;
-		border-top: none;
-
-		button {
-			background: none;
-			border: none;
-			display: flex;
-			align-items: center;
-			column-gap: 4px;
-			font-family: 'Jost';
-			font-size: 16px;
-			line-height: 24px;
-			color: $lightTextColor;
-			font-weight: 600;
-			cursor: pointer;
-
-			img {
-				@include lightGreyIcon;
-			}
-		}
 	}
 
 	&.red {
@@ -67,7 +43,7 @@
 
 	&.white{
 		background-color: $whiteColor;
-		border-bottom: 1px solid $borderLightColor;
+		border-bottom: calc(1/1440*100vw) solid $borderLightColor;
 
 		.app-type {
 			border-color: $borderLightColor;
@@ -97,7 +73,7 @@
 
 		.search-bar {
 			.search-field {
-				border: 2px solid $borderLightColor;
+				border: calc(2/1440*100vw) solid $borderLightColor;
 			}
 
 			.close-search {

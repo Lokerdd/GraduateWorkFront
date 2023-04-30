@@ -1,0 +1,66 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/constants.scss';
+
+.title-block-header {
+	@include size(margin-left, 160);
+	@include size(margin-bottom, 60);
+	display: flex;
+	@include size(column-gap, 16);
+	align-items: center;
+
+	span {
+		@include size(font-size, 40);
+		@include size(line-height, 58);
+		font-weight: 600;
+		color: $darkTextColor;
+	}
+	img {
+		@include size(width, 32);
+		@include size(height, 32);
+		@include mainRedIcon;
+	}
+}
+
+div.title-block {
+	@include size(margin-bottom, 60);
+	position: relative;
+
+
+	.titles {
+		display: flex;
+		flex-wrap: nowrap;
+		@include size(column-gap, 20);
+		transition: transform 0.3s;
+	}
+
+	.button {
+		position: absolute;
+		z-index: 2;
+		height: 100%;
+		top: 0;
+
+		@include size(width, 140);
+		.darkBackground {
+			width: 100%;
+			z-index: -1;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+		}
+		&.next {
+			@include size(right, -160);
+		}
+		&.prev {
+			@include size(left, -160);
+			transform: rotate(180deg);
+		}
+		img {
+			@include lightGreyIcon;
+		}
+		&:hover img {
+			@include wightColorIcon;
+		}
+	}
+}

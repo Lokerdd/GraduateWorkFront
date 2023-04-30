@@ -1,0 +1,51 @@
+@import '../../../styles/mixins.scss';
+
+.small-card {
+	.title-card {
+		width: calc(360/1440*100vw);
+		height: calc(200/1440*100vw);
+	}
+
+	.genres {
+		border-width: calc(10*0.63/1440*100vw);
+		&::after {
+			top: calc(2.5*0.63/1440*100vw);
+			right: calc(-11*0.63/1440*100vw);
+			border-width: calc(7*0.63/1440*100vw);
+		}
+		li {
+			padding-left: calc(20*0.63/1440*100vw);
+			padding-right: calc(60*0.63/1440*100vw);
+			height: calc(30*0.63/1440*100vw);
+			&:not(:first-child)::before, 
+			&::after {
+				top: calc(10*0.63/1440*100vw);
+				border-width: calc(5*0.63/1440*100vw);
+			}
+		}
+	}
+
+	.content {
+		padding: calc(20*0.63/1440*100vw);
+
+		.name {
+			width: calc((100% - 100px)*0.63/1440*100vw);
+			font-size: calc(32*0.63/1440*100vw);
+			line-height: calc(46*0.63/1440*100vw);
+			margin-bottom: calc(4*0.63/1440*100vw);
+		}
+
+		.type {
+			font-size: calc(18*0.63/1440*100vw);
+			line-height: calc(26*0.63/1440*100vw);
+			margin-bottom: calc(24*0.63/1440*100vw);
+		}
+
+		.description {
+			font-size: calc(16*0.63/1440*100vw);
+			line-height: calc(23*0.63/1440*100vw);
+			height: calc(138*0.63/1440*100vw);
+			width: calc(450*0.63/1440*100vw);
+		}
+	}
+}

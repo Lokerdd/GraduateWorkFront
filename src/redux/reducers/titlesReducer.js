@@ -3,6 +3,10 @@ import * as actionTypes from '../actionTypes';
 const initialState = {
 	titles: {
 		premier: null,
+		rate: null,
+		genres: null,
+		romantic: null,
+		comedy: null,
 	},
 	isLoading: false,
 	error: null,
@@ -17,13 +21,25 @@ const titlesReducer = (state = initialState, action = null) => {
 			isLoading: true,
 		};
 
-	case actionTypes.MAIN_TITLES_RECEIVED:
+	case actionTypes.MAIN_TITLES_RECEIVED: {
+		const {
+			premier,
+			rate,
+			genres,
+			romantic,
+			comedy,
+		} = action.payload;
 		return {
 			...initialState,
 			titles: {
-				premier: action.payload.premier,
+				premier,
+				rate,
+				genres,
+				romantic,
+				comedy,
 			}
 		};
+	}
 
 	case actionTypes.MAIN_TITLES_FAILED:
 		return {

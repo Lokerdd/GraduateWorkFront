@@ -17,3 +17,7 @@
 @mixin borderLightIcon {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(6481%) hue-rotate(287deg) brightness(127%) contrast(72%);
 }
+
+@mixin size($rule, $size) {
+  #{$rule}: calc(#{$size}/1440*100vw); 
+}

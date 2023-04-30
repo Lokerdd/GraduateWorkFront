@@ -1,70 +1,71 @@
 @import '../../../styles/constants.scss';
 
 .premier {
-	height: 845px;
+	height: calc(845/1440*100vw);
 	width: 100%;
+	margin-bottom: calc(60/1440*100vw);
 	background-image: url('/../public/assets/images/premier-background.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
 
 	.container {
-		padding-top: 230px;
+		padding-top: calc(230/1440*100vw);
 
 		.data {
-			width: 460px;
+			width: calc(460/1440*100vw);
 			display: flex;
 			flex-direction: column;
 			
-			.header {
+			.block-header {
 				color: $mainRedTheme;
-				font-size: 80px;
+				font-size: calc(80/1440*100vw);
 				font-weight: 900;
-				line-height: 116px;
+				line-height: calc(116/1440*100vw);
 				text-transform: uppercase;
-				margin-bottom: 50px;
+				margin-bottom: calc(50/1440*100vw);
 				position: relative;
 
 				&::after {
 					content: '';
 					display: block;
-					width: 430px;
-					height: 23px;
+					width: calc(430/1440*100vw);
+					height: calc(23/1440*100vw);
 					background-color: $mainRedTheme;
 					position: absolute;
-					bottom: -23px;
-					left: 15px;
+					bottom: calc(-23/1440*100vw);
+					left: calc(15/1440*100vw);
 					transform: skewX(-45deg);
 				}
 			}
 
 			.name {
 				color: $darkTextColor;
-				font-size: 40px;
-				line-height: 40px;
+				font-size: calc(40/1440*100vw);
+				line-height: calc(40/1440*100vw);
 				font-weight: 600;
 				text-transform: uppercase;
 			}
 
 			.seasons {
 				color: $lightTextColor;
-				font-size: 24px;
-				line-height: 35px;
+				font-size: calc(24/1440*100vw);
+				line-height: calc(35/1440*100vw);
 				font-weight: 600;
 				text-transform: uppercase;
-				margin-bottom: 20px;
+				margin-bottom: calc(20/1440*100vw);
 			}
 
 			.description {
 				color: $darkTextColor;
-				font-size: 16px;
+				font-size: calc(16/1440*100vw);
 				font-weight: 400;
-				margin-bottom: 54px;
+				margin-bottom: calc(54/1440*100vw);
 			}
 
 			.watch {
-				height: 70px;
-				padding: 0 24px 0 20px;
+				height: calc(70/1440*100vw);
+				padding: 0 calc(24/1440*100vw) 0 calc(20/1440*100vw);
 				background-color: $mainRedTheme;
 				display: flex;
 				justify-content: space-between;
@@ -72,7 +73,7 @@
 
 				span {
 					color: $whiteColor;
-					font-size: 24px;
+					font-size: calc(24/1440*100vw);
 					text-transform: uppercase;
 				}
 			}
@@ -83,6 +84,6 @@
 		position: absolute;
 		bottom: 0;
 		right: 0;
-		height: 780px;
+		height: calc(780/1440*100vw);
 	}
 }

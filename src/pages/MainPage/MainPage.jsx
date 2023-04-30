@@ -5,6 +5,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { getMainPageTitles } from '../../redux/actions/titles';
 
 import Premier from '../../components/MainPage/Premier';
+import TitleBlock from '../../components/reuse/TitleBlock';
 
 import './MainPage.css';
 
@@ -17,20 +18,37 @@ function MainPage() {
 
 	const {
 		titles: {
-			premier
+			premier,
+			rate,
+			// genres,
+			romantic,
+			comedy,
 		},
 		isLoading,
 	} = useSelector((state) => state.titles);
 
+	if (isLoading) return <CircularProgress />;
+
 	return (
 		<div className='main-page'>
-			{isLoading
-				&& <CircularProgress />}
-			{!isLoading 
-				&& (
-					<Premier data={premier} />
-				)
-			}
+			<Premier data={premier} />
+			<TitleBlock
+				header='РЕЙТИНГОВОЕ АНИМЕ'
+				link='/top'
+				titles={rate}
+				rate
+				big
+			/>
+			<TitleBlock
+				header='ПОПУЛЯРНАЯ РОМАНТИКА'
+				link='/catalog?genre=romantic'
+				titles={romantic}
+			/>
+			<TitleBlock
+				header='ПОПУЛЯРНАЯ КОМЕДИЯ'
+				link='/catalog?genre=comedy'
+				titles={comedy}
+			/>
 		</div>
 	);
 }
