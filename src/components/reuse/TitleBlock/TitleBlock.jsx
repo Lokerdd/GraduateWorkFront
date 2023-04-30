@@ -34,8 +34,6 @@ function TitleBlock({
 			titles.sort(() => Math.random() - 0.5);
 		}
 
-		console.log(big);
-
 		return (
 			<>
 				<Link to={link} className='title-block-header'>
