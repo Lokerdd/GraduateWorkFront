@@ -20,12 +20,14 @@ function MainPage() {
 		titles: {
 			premier,
 			rate,
-			// genres,
+			genres,
 			romantic,
 			comedy,
 		},
 		isLoading,
 	} = useSelector((state) => state.titles);
+
+	console.log(genres);
 
 	if (isLoading) return <CircularProgress />;
 
@@ -38,6 +40,12 @@ function MainPage() {
 				titles={rate}
 				rate
 				big
+			/>
+			<TitleBlock
+				header='ПОПУЛЯРНЫЕ ЖАНРЫ'
+				link='/catalog'
+				titles={genres}
+				genre
 			/>
 			<TitleBlock
 				header='ПОПУЛЯРНАЯ РОМАНТИКА'

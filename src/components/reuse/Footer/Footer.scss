@@ -1,0 +1,51 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/constants.scss';
+
+.footer {
+	background-color: $footerColor;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include size(padding-top, 47);
+	@include size(padding-bottom, 24);
+	color: $darkTextColor;
+	font-weight: 500;
+	@include size(font-size, 16);
+	@include size(line-height, 23);
+	ul {
+		display: flex;
+		@include size(margin-bottom, 32);
+		li {
+			transition: all 0.3s;
+		}
+		&.social {
+			@include size(column-gap, 48);
+			li {
+				@include darkGreyIcon;
+				&:hover {
+					@include whiteColorIcon;
+				}
+				img {
+					@include size(width, 32);
+					@include size(height, 32);
+				}
+			}
+		}
+		&.information {
+			@include size(column-gap, 56);
+			li {
+				@include size(line-height, 43);
+				&:hover {
+					color: $whiteColor;
+				}
+			}
+		}
+	}
+
+	.line {
+		@include size(width, 930);
+		@include size(height, 2);
+		background-color: $darkTextColor;
+		@include size(margin-bottom, 16);
+	}
+}

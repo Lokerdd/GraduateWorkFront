@@ -5,6 +5,7 @@ import SmallTitleCard from '../SmallTitleCard';
 
 import './TitleBlock.scss';
 import { Link } from 'react-router-dom';
+import GenreCard from '../GenreCard/GenreCard';
 
 function TitleBlock({
 	header,
@@ -12,6 +13,7 @@ function TitleBlock({
 	titles,
 	rate,
 	big,
+	genre,
 }) {
 	const [offset, setOffset] = useState(0);
 	const titlesAmount = big ? 2 : 3;
@@ -56,14 +58,11 @@ function TitleBlock({
 						</button>
 					)}
 					<div className='titles' style={{transform: `translateX(calc((${big ? -offset*570 : -offset*370})/1440*100vw))`}}>
-						{ big 
-							? titles.map((item) => {
-								return <BigTitleCard title={item} key={item.name} />;
-							})
-							: titles.map((item) => {
-								return <SmallTitleCard title={item} key={item.name} />;
-							})
-						}
+						{ titles.map((item) => {
+							if (big) return <BigTitleCard title={item} key={item.name} />;
+							if (genre) return <GenreCard genre={item} key={item.name}/>;
+							return <SmallTitleCard title={item} key={item.name} />;
+						})}
 					</div>
 					{offset < titles.length - titlesAmount && (
 						<button 

@@ -39,7 +39,6 @@ function BigTitleCard({
 								key={item.name}
 								style={{backgroundColor: `#${item.color}`}}	
 							>
-								<img src={item.image} />
 								<span>{item.name}</span>
 							</li>
 						);

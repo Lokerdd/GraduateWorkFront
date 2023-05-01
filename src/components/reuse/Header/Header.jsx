@@ -30,7 +30,7 @@ function Header() {
 	}, [location.pathname]);
 
 	const handleScroll = () => {
-		if (window.scrollY < 980 && location.pathname === '/') setType(HEADER_RED);
+		if (window.scrollY < 1130 && location.pathname === '/') setType(HEADER_RED);
 		else setType(HEADER_WHITE);
 	};
 

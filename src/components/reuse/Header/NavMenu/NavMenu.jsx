@@ -17,8 +17,8 @@ function NavMenu() {
 			{ !isSearching ? (
 				<>
 					<Link to='/' className={`link ${location.pathname === '/' && 'active'}`}>Главная</Link>
-					<Link to='catalog' className={`link ${location.pathname.includes('catalog') && 'active'}`}>Каталог</Link>
-					<Link to='top' className={`link ${location.pathname.includes('top') && 'active'}`}>Топ – 100</Link>
+					<Link to='/catalog' className={`link ${location.pathname.includes('catalog') && 'active'}`}>Каталог</Link>
+					<Link to='/top' className={`link ${location.pathname.includes('top') && 'active'}`}>Топ – 100</Link>
 					<button 
 						className='search-button'
 						onClick={toggleSearch}
