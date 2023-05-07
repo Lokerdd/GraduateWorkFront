@@ -1,8 +1,10 @@
 import React, { memo, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import NavMenu from './NavMenu';
 import UserBlock from './UserBlock';
+import { verifyRequest } from '../../../redux/actions/auth';
 
 import {
 	HEADER_RED,
@@ -15,6 +17,7 @@ import './Header.scss';
 
 function Header() {
 	const location = useLocation();
+	const dispatch = useDispatch();
 	const [type, setType] = useState(HEADER_RED);
 
 	useEffect(() => {
@@ -29,6 +32,10 @@ function Header() {
 		}
 	}, [location.pathname]);
 
+	useEffect(() => {
+		if (localStorage.getItem('token')) dispatch(verifyRequest());
+	}, []);
+
 	const handleScroll = () => {
 		if (window.scrollY < 1130 && location.pathname === '/') setType(HEADER_RED);
 		else setType(HEADER_WHITE);
@@ -38,7 +45,7 @@ function Header() {
 		<div className={`header ${type === HEADER_RED ? HEADER_RED : HEADER_WHITE}`}>
 			<div className='container'>
 				<Link to='/'>
-					<img src={type === HEADER_RED ? RED_LOGO_PATH : WHITE_LOGO_PATH} />
+					<img className='logo' src={type === HEADER_RED ? RED_LOGO_PATH : WHITE_LOGO_PATH} />
 				</Link>
 				<NavMenu />
 				<UserBlock />

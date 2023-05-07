@@ -5,13 +5,13 @@ import * as Yup from 'yup';
 
 import { authRequest } from '../../../../../redux/actions/auth';
 
-import './Login.scss';
+import './Register.scss';
 
-function Login({setModalType}) {
+function Register({setModalType}) {
 	const dispatch = useDispatch();
 	const error = useSelector((state) => state.auth.error);
 
-	const loginFormFields = [
+	const registerFormFields = [
 		{
 			fieldName: 'email',
 			placeholder: 'Введите E-mail',
@@ -19,41 +19,71 @@ function Login({setModalType}) {
 			icon: '/assets/icons/email-icon.svg',
 		},
 		{
+			fieldName: 'name',
+			placeholder: 'Введите ваше имя',
+			type: 'text',
+			icon: '/assets/icons/nickname-icon.svg',
+		},
+		{
 			fieldName: 'password',
 			placeholder: 'Введите пароль',
 			type: 'password',
 			icon: '/assets/icons/password-icon.svg',
 		},
+		{
+			fieldName: 'passwordConfirmation',
+			placeholder: 'Подтвердите пароль',
+			type: 'password',
+			icon: '/assets/icons/password-confirmation-icon.svg',
+		},
 	];
 
 	const schema = Yup.object().shape({
-		password: Yup.string()
-			.trim()
-			.min(8, 'Минимум 8 символов')
-			.required('Обязательное поле'),
 		email: Yup.string()
+			.required('Обязательное поле')
 			.matches(
 				/^((([0-9A-Za-z]{1}[-0-9A-z.]{1,}[0-9A-Za-z]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u,
 				'Некорректный e-mail',
 			)
 			.required('Обязательное поле'),
+		name: Yup.string()
+			.trim()
+			.min(4, 'Минимум 4 символа')
+			.required('Обязательное поле'),
+		password: Yup.string()
+			.trim()
+			.min(8, 'Минимум 8 символов')
+			.required('Обязательное поле'),
+		passwordConfirmation: Yup.string()
+			.test('passwords-match', 'Пароли не совпадают', function(value){
+				return this.parent.password === value;
+			})
+			.required('Обязательное поле'),
 	});
 
 	return (
-		<div className='login'>
+		<div className='register'>
 			<Formik
 				initialValues={{
 					email: '',
+					name: '',
 					password: '',
+					passwordConfirmation: '',
 				}}
 				validationSchema={schema}
 				onSubmit={(values) => {
-					dispatch(authRequest({type: 'login', request: values}));
+					dispatch(authRequest({
+						type: 'register', 
+						request: {
+							name: values.name,
+							email: values.email,
+							password: values.password,
+						}}));
 				}}
 			>
 				{({ errors, touched }) => (
 					<Form className='auth-form'>
-						{loginFormFields.map(({fieldName, placeholder, icon, type}) => (
+						{registerFormFields.map(({fieldName, placeholder, icon, type}) => (
 							<div className='field' key={fieldName}>
 								<img src={icon} />
 								<Field
@@ -67,32 +97,23 @@ function Login({setModalType}) {
 								)}
 							</div>
 						))}
-						<div className='register'>
-						У вас ещё нет аккаунта?
+						<div className='login'>
+						У вас уже есть аккаунт?
 							<span
 								onClick={() => {
-									setModalType('register');
+									setModalType('login');
 								}}
 							>
-							Зарегистрируйтесь!
+							Авторизируйтесь!
 							</span>
 						</div>
 						{error && (
-							<div className='error'>Неверные логин или пароль</div>
+							<div className='error'>Не удалось зарегистрироваться</div>
 						)}
 						<button type='submit' className='submit-button'>
-							ВОЙТИ В ПРОФИЛЬ
+						ЗАРЕГИСТРИРОВАТЬ ПРОФИЛЬ
 							<img src="/assets/icons/auth-icon.svg" />
 						</button>
-						<div className='enter-social'>Вход через социальные сети</div>
-						<div className='social-buttons'>
-							<button>
-								<img src="/assets/icons/vk-icon.svg" />
-							</button>
-							<button>
-								<img src="/assets/icons/google-icon.svg" />
-							</button>
-						</div>
 					</Form>
 				)}
 			</Formik>
@@ -100,4 +121,4 @@ function Login({setModalType}) {
 	);
 }
 
-export default memo(Login);
+export default memo(Register);

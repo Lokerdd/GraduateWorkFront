@@ -1,5 +1,53 @@
+@import '../../../../../styles/auth.scss';
+
 .login {
-	display: flex;
-	flex-direction: column;
-	
+	width: 100%;
+
+	.auth-form {
+		display: flex;
+		flex-direction: column;
+
+		.field {
+			@include authInput;
+		}
+
+		.register, .enter-social {
+			@include authText;
+		}
+		.enter-social {
+			@include size(margin-bottom, 20);
+		}
+
+		.error {
+			text-align: center;
+			color: red;
+			@include size(margin-bottom, 10);
+		}
+
+		.submit-button {
+			@include authButton;
+			@include size(margin-bottom, 20);
+		}
+
+		.social-buttons {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@include size(column-gap, 20);
+			button {
+				@include darkGreyIcon;
+				border: 1px solid;
+				@include size(height, 40);
+				@include size(width, 40);
+				@include size(border-radius, 20);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				img {
+					@include size(width, 24);
+					@include size(height, 24);
+				}
+			}
+		}
+	}
 }

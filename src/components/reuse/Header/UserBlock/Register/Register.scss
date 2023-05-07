@@ -1,0 +1,23 @@
+@import '../../../../../styles/auth.scss';
+
+.register {
+	width: 100%;
+
+	.field {
+		@include authInput;
+	}
+
+	.login {
+		@include authText;
+	}
+
+	.error {
+		text-align: center;
+		color: red;
+		@include size(margin-bottom, 10);
+	}
+
+	.submit-button {
+		@include authButton;
+	}
+}

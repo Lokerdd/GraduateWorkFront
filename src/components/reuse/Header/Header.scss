@@ -14,21 +14,16 @@
 		height: calc(70/1440*100vw);
 		color: $lightTextColor;
 		font-weight: 700;
+		@include size(font-size, 16);
+	}
+
+	.logo {
+		@include size(width, 46);
+		@include size(height, 39);
 	}
 
 	&.red {
 		background-color: $mainRedTheme;
-
-		.app-type {
-			border-color: $whiteColor;
-
-			button.active {
-				color: $whiteColor;
-				img {
-					@include whiteColorIcon;
-				}
-			}
-		}
 
 		.link.active {
 			color: $whiteColor;
@@ -45,17 +40,6 @@
 	&.white{
 		background-color: $whiteColor;
 		border-bottom: calc(1/1440*100vw) solid $borderLightColor;
-
-		.app-type {
-			border-color: $borderLightColor;
-
-			button.active {
-				color: $mainRedTheme;
-				img {
-					@include mainRedIcon;
-				}
-			}
-		}
 
 		.link.active {
 			color: $mainRedTheme;

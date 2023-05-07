@@ -1,15 +1,17 @@
 @import '../../../../styles/constants.scss';
+@import '../../../../styles/mixins.scss';
 
 .links {
   height: 100%;
   display: flex;
   align-items: center;
-  column-gap: calc(60/1440*100vw);
+  @include size(column-gap, 60);
 
   .link {
     text-decoration: none;
     color: $lightTextColor;
-    line-height: calc(70/1440*100vw);
+    @include size(line-height, 70);
+		@include size(font-size, 16);
 
     &.active {
       border-bottom: calc(2/1440*100vw) solid;
@@ -22,20 +24,26 @@
     height: min-content;
     width: min-content;
     cursor: pointer;
+    @include size(width, 24);
+    @include size(height, 24);
+    img {
+      width: inherit;
+      height: inherit;
+    }
   }
 
   .search-bar {
     display: flex;
     align-items: center;
-    width: calc(390/1440*100vw);
+		@include size(width, 390);
 
     .search-field {
-      height: calc(34/1440*100vw);
+		  @include size(height, 34);
       border: none;
       width: 100%;
       padding: 0 calc(20/1440*100vw);
       background-color: $searchStrokeBackground;
-      font-size: calc(12/1440*100vw);
+      @include size(font-size, 12);
     }
 
     .close-search {
@@ -46,8 +54,8 @@
       height: min-content;
 
       img {
-        width: calc(24/1440*100vw);
-        height: calc(24/1440*100vw);
+        @include size(width, 24);
+        @include size(height, 24);
       }
     }
   }

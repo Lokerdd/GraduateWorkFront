@@ -1,0 +1,79 @@
+@import './constants.scss';
+@import './mixins.scss';
+
+@mixin authInput() {
+	position: relative;
+	@include size(margin-bottom, 20);
+	width: 100%;
+
+	img {
+		position: absolute;
+		@include size(left, 10);
+		@include size(top, 7);
+		@include size(width, 24);
+		@include size(height, 24);
+	}
+
+	input {
+		width: 100%;
+		border-radius: 0;
+		border: 1px solid $borderLightColor;
+		background-color: $searchStrokeBackground;
+		color: $darkTextColor;
+		@include size(font-size, 12);
+		@include size(line-height, 17);
+		@include size(height, 38);
+		@include size(padding-left, 44);
+
+		&::placeholder {
+			color: $lightTextColor;
+		}
+
+		&:hover {
+			border: 1px solid $borderLightColor;
+		}
+
+		&:focus {
+			border: 1px solid $borderLightColor;
+			outline: none;
+		}
+	}
+
+	.error {
+		color: red;
+		@include size(font-size, 10);
+		@include size(line-height, 15);
+		font-weight: 500;
+	}
+}
+
+@mixin authText() {
+	@include size(font-size, 12);
+	@include size(line-height, 17);
+	font-weight: 500;
+	color: $darkTextColor;
+	text-align: center;
+	@include size(margin-bottom, 30);
+
+	span {
+		color: $mainRedTheme;
+		cursor: pointer;
+	}
+}
+
+@mixin authButton {
+	background-color: $mainRedTheme;
+	width: 100%;
+	@include size(height, 32);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 calc(10/1440*100vw);
+	@include size(font-size, 12);
+
+	img {
+		@include size(width, 16);
+		@include size(height, 16);
+	}
+}

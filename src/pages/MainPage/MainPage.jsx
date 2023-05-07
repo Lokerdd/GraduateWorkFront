@@ -27,8 +27,6 @@ function MainPage() {
 		isLoading,
 	} = useSelector((state) => state.titles);
 
-	console.log(genres);
-
 	if (isLoading) return <CircularProgress />;
 
 	return (

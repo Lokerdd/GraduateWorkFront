@@ -43,6 +43,17 @@
     position: absolute;
     top: 0;
     right: 0;
+    @include size(width, 286);
+    &.auth .user-info{
+      display: flex;
+      width: 100%;
+      padding: 0;
+      color: $mainRedTheme;
+      @include size(font-size, 18);
+      font-weight: 700;
+      align-items: center;
+      justify-content: center;
+    }
 
     .user-info {
       padding: calc(10/1440*100vw);
@@ -70,11 +81,15 @@
       align-items: flex-start;
       padding: calc(30/1440*100vw) calc(10/1440*100vw);
       border: calc(1/1440*100vw) solid $borderLightColor;
+      
+      li {
+        width: 100%;
+      }
 
       .link {
-        display: block;
         height: calc(24/1440*100vw);
         display: flex;
+        width: 100%;
         align-items: center;
         column-gap: calc(32/1440*100vw);
         color: $darkTextColor;
