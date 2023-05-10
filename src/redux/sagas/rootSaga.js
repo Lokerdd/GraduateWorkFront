@@ -5,6 +5,8 @@ import verifySaga from './verifySaga';
 import logoutSaga from './logoutSaga';
 import catalogTitlesSaga from './catalogTitlesSaga';
 import loadMoreCatalogSaga from './loadMoreCatalogSaga';
+import topTitlesSaga from './topTitlesSaga';
+import loadMoreTopSaga from './loadMoreTopSaga';
 
 function* rootSaga() {
 	yield all([
@@ -14,6 +16,8 @@ function* rootSaga() {
 		logoutSaga(),
 		catalogTitlesSaga(),
 		loadMoreCatalogSaga(),
+		topTitlesSaga(),
+		loadMoreTopSaga(),
 	]);
 }
   

@@ -33,3 +33,24 @@ export const loadMoreCatalogTitles = (payload) => ({
 	type: actionTypes.LOAD_MORE_CATALOG_TITLES,
 	payload,
 });
+
+
+export const getTopTitles = (payload) => ({
+	type: actionTypes.TOP_TITLES_REQUESTED,
+	payload,
+});
+
+export const topTitlesReceived = (payload) => ({
+	type: actionTypes.TOP_TITLES_RECEIVED,
+	payload,
+});
+
+export const topTitlesFailed = (error) => ({
+	type: actionTypes.TOP_TITLES_FAILED,
+	error,
+});
+
+export const loadMoreTopTitles = (payload) => ({
+	type: actionTypes.LOAD_MORE_TOP_TITLES,
+	payload,
+});

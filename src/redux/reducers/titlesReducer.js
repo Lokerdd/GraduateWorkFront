@@ -10,6 +10,8 @@ const initialState = {
 	},
 	catalogTitles: [],
 	catalogAmountOfPages: 0,
+	topTitles: [],
+	topAmountOfPages: 0,
 	isLoading: false,
 	error: null,
 };
@@ -70,6 +72,32 @@ const titlesReducer = (state = initialState, action = null) => {
 		};
 
 	case actionTypes.LOAD_MORE_CATALOG_TITLES:
+		return {
+			...state,
+			isLoading: true,
+		};
+
+	case actionTypes.TOP_TITLES_REQUESTED:
+		return {
+			...initialState,
+			isLoading: true,
+		};
+		
+	case actionTypes.TOP_TITLES_RECEIVED: {
+		return {
+			...initialState,
+			topTitles: action.payload.data,
+			topAmountOfPages: action.payload.meta.last_page
+		};
+	}
+		
+	case actionTypes.TOP_TITLES_FAILED:
+		return {
+			...initialState,
+			error: action.error,
+		};
+	
+	case actionTypes.LOAD_MORE_TOP_TITLES:
 		return {
 			...state,
 			isLoading: true,
