@@ -3,6 +3,8 @@ import mainPageTitlesSaga from './mainPageTitlesSaga';
 import authSaga from './authSaga';
 import verifySaga from './verifySaga';
 import logoutSaga from './logoutSaga';
+import catalogTitlesSaga from './catalogTitlesSaga';
+import loadMoreCatalogSaga from './loadMoreCatalogSaga';
 
 function* rootSaga() {
 	yield all([
@@ -10,6 +12,8 @@ function* rootSaga() {
 		authSaga(),
 		verifySaga(),
 		logoutSaga(),
+		catalogTitlesSaga(),
+		loadMoreCatalogSaga(),
 	]);
 }
   

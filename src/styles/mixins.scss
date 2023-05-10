@@ -1,3 +1,5 @@
+@import './constants.scss';
+
 @mixin mainRedIcon {
   filter: brightness(0) saturate(100%) invert(31%) sepia(96%) saturate(1065%) hue-rotate(326deg) brightness(106%) contrast(86%);
 }
@@ -20,4 +22,25 @@
 
 @mixin size($rule, $size) {
   #{$rule}: calc(#{$size}/1440*100vw); 
+}
+
+@mixin header() {
+  color: $mainRedTheme;
+	font-size: calc(70/1440*100vw);
+	font-weight: 900;
+	line-height: calc(116/1440*100vw);
+	text-transform: uppercase;
+	position: relative;
+	z-index: 0;
+
+	&::after {
+		content: '';
+		display: block;
+		height: calc(23/1440*100vw);
+		background-color: $mainRedTheme;
+		position: absolute;
+		bottom: calc(-23/1440*100vw);
+		left: calc(15/1440*100vw);
+		transform: skewX(-45deg);
+	}
 }

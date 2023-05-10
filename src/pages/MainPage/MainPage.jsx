@@ -7,8 +7,6 @@ import { getMainPageTitles } from '../../redux/actions/titles';
 import Premier from '../../components/MainPage/Premier';
 import TitleBlock from '../../components/reuse/TitleBlock';
 
-import './MainPage.css';
-
 function MainPage() {
 	const dispatch = useDispatch();
 
@@ -17,7 +15,7 @@ function MainPage() {
 	}, []);
 
 	const {
-		titles: {
+		mainTitles: {
 			premier,
 			rate,
 			genres,

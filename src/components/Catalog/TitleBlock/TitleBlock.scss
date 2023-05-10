@@ -1,0 +1,7 @@
+@import '../../../styles/mixins.scss';
+
+.catalog-title-block {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	@include size(gap, 20);
+}

@@ -12,6 +12,9 @@
 	font-weight: 500;
 	@include size(font-size, 16);
 	@include size(line-height, 23);
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 	ul {
 		display: flex;
 		@include size(margin-bottom, 32);

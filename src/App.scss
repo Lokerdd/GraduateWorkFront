@@ -16,6 +16,9 @@ a {
 body {
 	width: 100vw;
 	overflow-x: hidden;
+	position: relative;
+	min-height: 100vh;
+	@include size(padding-bottom, 287);
 }
 
 .container {

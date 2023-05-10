@@ -1,4 +1,5 @@
 @import '../../../styles/constants.scss';
+@import '../../../styles/mixins.scss';
 
 .premier {
 	height: calc(845/1440*100vw);
@@ -18,24 +19,12 @@
 			flex-direction: column;
 			
 			.block-header {
-				color: $mainRedTheme;
-				font-size: calc(80/1440*100vw);
-				font-weight: 900;
-				line-height: calc(116/1440*100vw);
-				text-transform: uppercase;
 				margin-bottom: calc(50/1440*100vw);
-				position: relative;
+				@include header();
+				font-size: calc(80/1440*100vw);
 
-				&::after {
-					content: '';
-					display: block;
-					width: calc(430/1440*100vw);
-					height: calc(23/1440*100vw);
-					background-color: $mainRedTheme;
-					position: absolute;
-					bottom: calc(-23/1440*100vw);
-					left: calc(15/1440*100vw);
-					transform: skewX(-45deg);
+				&:after {
+					@include size(width, 430)
 				}
 			}
 

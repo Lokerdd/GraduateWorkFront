@@ -1,0 +1,7 @@
+@import '../../../styles/mixins.scss';
+
+.search-block {
+	display: flex;
+	justify-content: space-between;
+	@include size(margin-bottom, 60);
+}

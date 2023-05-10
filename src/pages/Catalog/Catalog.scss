@@ -1,0 +1,37 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/constants.scss';
+
+.catalog {
+	@include size(padding-top, 60);
+
+	.header {
+		@include header();
+		@include size(margin-bottom, 95);
+		&:after {
+			@include size(width, 990)
+		}
+	}
+
+	.catalog-title-block {
+		@include size(margin-bottom, 60);
+	}
+
+	.load-more-button {
+		@include size(width, 455);
+		@include size(height, 70);
+		background-color: $mainRedTheme;
+		color: $whiteColor;
+		@include size(font-size, 24);
+		margin-left: 50%;
+		transform: translateX(-50%);
+		@include size(margin-bottom, 60);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include size(padding, 20);
+
+		.circular {
+			@include whiteColorIcon;
+		}
+	}
+}
