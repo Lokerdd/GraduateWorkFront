@@ -11,7 +11,6 @@ import { CATALOG_TITLES_REQUESTED } from '../actionTypes';
 function* catalogTitlesWorker({ payload }) {
 	try {
 		const response = yield call(api.get, 'title/catalog', {params: payload});
-		console.log(response);
 		yield put(catalogTitlesReceived(response.data));
 	} catch (error) {
 		yield put(catalogTitlesFailed(error.response.data));

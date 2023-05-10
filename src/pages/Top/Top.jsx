@@ -34,7 +34,7 @@ function Top() {
 	return (
 		<div className='catalog container'>
 			<div className='header'>Лучшее</div>
-			<TitleBlock titles={titles}/>
+			<TitleBlock titles={titles} rate/>
 			{(!isLastPage || isLoading) && (
 				<button
 					className='load-more-button' 

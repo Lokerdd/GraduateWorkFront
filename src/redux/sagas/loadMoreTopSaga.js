@@ -13,9 +13,7 @@ function* loadMoreTopWorker({ payload }) {
 	try {
 		const response = yield call(api.get, 'title/top', {params: payload});
 		const prevTitles = yield select((state) => state.titles.topTitles);
-
 		if (prevTitles) response.data.data = [...prevTitles, ...response.data.data];
-		console.log(response.data.data);
 		yield put(topTitlesReceived(response.data));
 	} catch (error) {
 		yield put(topTitlesFailed(error.response.data));

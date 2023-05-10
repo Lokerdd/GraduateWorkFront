@@ -11,7 +11,6 @@ import { TOP_TITLES_REQUESTED } from '../actionTypes';
 function* topTitlesWorker({ payload }) {
 	try {
 		const response = yield call(api.get, 'title/top', {params: payload});
-		console.log(response);
 		yield put(topTitlesReceived(response.data));
 	} catch (error) {
 		yield put(topTitlesFailed(error.response.data));
