@@ -6,21 +6,25 @@ import './CustomSelect.scss';
 function CustomSelect({
 	options,
 	setFilter,
-	placeholder
+	placeholder,
+	isNotMulti,
+	value,
 }) {
 	const handleChange = (values) => {
-		values = values.map((item) => item.value).join();
+		if (values[0]) values = values.map((item) => item.value).join();
+		else values = values.value;
 		setFilter(values);
 	};
 	return (
 		<Select 
 			options={options}
-			isMulti
+			isMulti={!isNotMulti}
 			placeholder={placeholder}
 			className='custom-select'
 			classNamePrefix='custom-select'
 			closeMenuOnSelect={false}
 			onChange={handleChange}
+			defaultInputValue={value}
 		/>
 	);
 }

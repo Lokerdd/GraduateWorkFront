@@ -24,7 +24,7 @@
 		&.social {
 			@include size(column-gap, 48);
 			li {
-				@include darkGreyIcon;
+				@include darkGrayIcon;
 				&:hover {
 					@include whiteColorIcon;
 				}

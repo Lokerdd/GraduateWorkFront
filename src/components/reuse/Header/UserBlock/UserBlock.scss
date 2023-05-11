@@ -33,7 +33,7 @@
       height: calc(16/1440*100vw);
 
       &.open {
-        @include darkGreyIcon;
+        @include darkGrayIcon;
       }
     }
   }
@@ -95,7 +95,7 @@
         color: $darkTextColor;
 
         img {
-          @include darkGreyIcon;
+          @include darkGrayIcon;
           width: calc(24/1440*100vw);
           height: calc(24/1440*100vw);
         }

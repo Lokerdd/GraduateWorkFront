@@ -38,10 +38,16 @@ function TitleBlock({
 
 		return (
 			<>
-				<Link to={link} className='title-block-header'>
-					<span className='name'>{header}</span>
-					<img src="/assets/icons/arrow-right-icon.svg"/>
-				</Link>
+				{link ? (
+					<Link to={link} className='title-block-header'>
+						<span className='name'>{header}</span>
+						<img src="/assets/icons/arrow-right-icon.svg"/>
+					</Link>
+				) : (
+					<div className='title-block-header'>
+						<span className='name'>{header}</span>
+					</div>
+				)}
 				<div className='title-block container'>
 					{!!offset && (
 						<button 

@@ -10,7 +10,6 @@ import TitleBlock from '../../components/Catalog/TitleBlock';
 import './Catalog.scss';
 
 function Catalog() {
-	const dispatch = useDispatch();
 	const [params, setParams] = useState({
 		statuses: '',
 		types: '',
@@ -19,24 +18,29 @@ function Catalog() {
 	const [page, setPage] = useState(1);
 	const [isLastPage, setIsLastPage] = useState(false);
 
+	const {
+		catalogTitles: titles,
+		catalogAmountOfPages: amountOfPages,
+		isLoading,
+	} = useSelector((state) => state.titles);
+
+	const dispatch = useDispatch();
+
 	useEffect(() => {
 		setPage(1);
 		dispatch(getCatalogTitles(params));
 	}, [params]);
 
 	useEffect(() => {
+		if (amountOfPages === page || !amountOfPages) setIsLastPage(true);
+		else setIsLastPage(false);
+	}, [amountOfPages, page]); 
+
+	useEffect(() => {
 		if (page !== 1) {
 			dispatch(loadMoreCatalogTitles({...params, page: page}));
-			if (page === amountOfPages) setIsLastPage(true);
-			else setIsLastPage(false);
 		}
 	}, [page]);
-
-	const {
-		catalogTitles: titles,
-		catalogAmountOfPages: amountOfPages,
-		isLoading,
-	} = useSelector((state) => state.titles);
 
 	const handleLoadMoreClick = () => {
 		if (!isLoading) {

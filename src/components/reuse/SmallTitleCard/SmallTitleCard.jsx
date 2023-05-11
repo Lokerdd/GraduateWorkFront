@@ -7,6 +7,7 @@ import './SmallTitleCard.scss';
 function SmallTitleCard({
 	title
 	: {
+		id,
 		season,
 		genres,
 		rate,
@@ -19,6 +20,7 @@ function SmallTitleCard({
 	return (
 		<div className='small-card'>
 			<TitleCard
+				id={id}
 				genres={genres}
 				rate={rate}
 				name={name}

@@ -57,7 +57,7 @@ div.title-block {
 			transform: rotate(180deg);
 		}
 		img {
-			@include lightGreyIcon;
+			@include lightGrayIcon;
 		}
 		&:hover img {
 			@include whiteColorIcon;

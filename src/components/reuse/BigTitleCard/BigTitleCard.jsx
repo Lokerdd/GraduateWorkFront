@@ -7,6 +7,7 @@ import './BigTitleCard.scss';
 function BigTitleCard({
 	title
 	: {
+		id,
 		season,
 		genres,
 		rate,
@@ -19,6 +20,7 @@ function BigTitleCard({
 	return (
 		<div className='big-card'>
 			<TitleCard
+				id={id}
 				genres={genres}
 				rate={rate}
 				name={name}

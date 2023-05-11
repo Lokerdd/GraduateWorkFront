@@ -4,11 +4,11 @@
   filter: brightness(0) saturate(100%) invert(31%) sepia(96%) saturate(1065%) hue-rotate(326deg) brightness(106%) contrast(86%);
 }
 
-@mixin lightGreyIcon {
+@mixin lightGrayIcon {
   filter: brightness(0) saturate(100%) invert(74%) sepia(6%) saturate(12%) hue-rotate(20deg) brightness(111%) contrast(82%);
 }
 
-@mixin darkGreyIcon {
+@mixin darkGrayIcon {
   filter: brightness(0) saturate(100%) invert(26%) sepia(2%) saturate(9%) hue-rotate(326deg) brightness(93%) contrast(87%)
 }
 
@@ -18,6 +18,10 @@
 
 @mixin borderLightIcon {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(6481%) hue-rotate(287deg) brightness(127%) contrast(72%);
+}
+
+@mixin yellowIcon {
+  filter: brightness(0) saturate(100%) invert(70%) sepia(50%) saturate(1033%) hue-rotate(1deg) brightness(105%) contrast(104%);
 }
 
 @mixin size($rule, $size) {
@@ -32,11 +36,14 @@
 	text-transform: uppercase;
 	position: relative;
 	z-index: 0;
+	width: max-content;
+	@include size(max-width, 1120);
 
 	&::after {
 		content: '';
 		display: block;
 		height: calc(23/1440*100vw);
+		width: calc(100% - 20px);
 		background-color: $mainRedTheme;
 		position: absolute;
 		bottom: calc(-23/1440*100vw);

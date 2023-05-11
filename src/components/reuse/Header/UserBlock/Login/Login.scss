@@ -35,7 +35,7 @@
 			justify-content: center;
 			@include size(column-gap, 20);
 			button {
-				@include darkGreyIcon;
+				@include darkGrayIcon;
 				border: 1px solid;
 				@include size(height, 40);
 				@include size(width, 40);

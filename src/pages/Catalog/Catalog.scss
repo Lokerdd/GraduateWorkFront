@@ -7,9 +7,6 @@
 	.header {
 		@include header();
 		@include size(margin-bottom, 95);
-		&:after {
-			@include size(width, 990)
-		}
 	}
 
 	.catalog-title-block {

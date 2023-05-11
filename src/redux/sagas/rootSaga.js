@@ -7,6 +7,8 @@ import catalogTitlesSaga from './catalogTitlesSaga';
 import loadMoreCatalogSaga from './loadMoreCatalogSaga';
 import topTitlesSaga from './topTitlesSaga';
 import loadMoreTopSaga from './loadMoreTopSaga';
+import titlePageSaga from './titlePageSaga';
+import sendCommentSaga from './sendCommentSaga';
 
 function* rootSaga() {
 	yield all([
@@ -18,6 +20,8 @@ function* rootSaga() {
 		loadMoreCatalogSaga(),
 		topTitlesSaga(),
 		loadMoreTopSaga(),
+		titlePageSaga(),
+		sendCommentSaga(),
 	]);
 }
   

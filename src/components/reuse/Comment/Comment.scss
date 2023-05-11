@@ -1,0 +1,46 @@
+@import '../../../styles/constants.scss';
+@import '../../../styles/mixins.scss';
+
+.comment {
+	display: flex;
+	flex-direction: column;
+	@include size(row-gap, 16);
+	@include size(padding, 10);
+	@include size(padding-bottom, 60);
+	background-color: $searchStrokeBackground;
+	color: $darkTextColor;
+
+	.user-info {
+		display: flex;
+		@include size(column-gap, 20);
+		align-items: center;
+
+		.data {
+			display: flex;
+			flex-direction: column;
+			@include size(font-size, 24);
+			@include size(line-height, 35);
+
+			.name {
+				color: $darkTextColor;
+				font-weight: 900;
+			}
+
+			.date {
+				color: $lightTextColor;
+			}
+		}
+
+		.avatar {
+			@include size(font-size, 40);
+			@include size(width, 64);
+			@include size(height, 64);
+    }
+	}
+
+	.text {
+		@include size(font-size, 24);
+		@include size(line-height, 35);
+		@include size(padding-left, 84);
+	}
+}
