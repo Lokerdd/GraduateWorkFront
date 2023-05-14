@@ -7,6 +7,8 @@ import { getMainPageTitles } from '../../redux/actions/titles';
 import Premier from '../../components/MainPage/Premier';
 import TitleBlock from '../../components/reuse/TitleBlock';
 
+import './MainPage.scss';
+
 function MainPage() {
 	const dispatch = useDispatch();
 
@@ -25,7 +27,7 @@ function MainPage() {
 		isLoading,
 	} = useSelector((state) => state.titles);
 
-	if (isLoading) return <CircularProgress />;
+	if (isLoading) return <div className='main-page'><CircularProgress className='circular' size={'calc(100/1440*100vw)'} /></div>;
 
 	return (
 		<div className='main-page'>

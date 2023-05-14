@@ -1,0 +1,15 @@
+@import '../../../styles/mixins.scss';
+
+.video {
+	@include size(width, 1120);
+	@include size(height, 600);
+	@include size(margin-bottom, 10);
+}
+.player-controller {
+	display: flex;
+	@include size(column-gap, 20);
+	@include size(margin-bottom, 48);
+	.custom-select {
+		flex-grow: 1;
+	}
+}

@@ -26,6 +26,7 @@
     .avatar {
       width: calc(40/1440*100vw);
       height: calc(40/1440*100vw);
+      @include size(font-size, 16);
     }
 
     .arrow {

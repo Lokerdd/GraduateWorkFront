@@ -1,0 +1,63 @@
+@import '../../../styles/mixins.scss';
+
+.comments {
+	display: flex;
+	flex-direction: column;
+	@include size(row-gap, 60);
+
+	.comments-header {
+		@include size(font-size, 40);
+		@include size(line-height, 58);
+		color: $darkTextColor;
+		font-weight: 700;
+	}
+
+	.text-field {
+		position: relative;
+
+		input {
+			width: 100%;
+			@include size(height, 70);
+			border-radius: 0;
+			border: 1px solid $borderLightColor;
+			@include size(padding-left, 20);
+			@include size(padding-right, 80);
+			background-color: $searchStrokeBackground;
+			@include size(font-size, 16);
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		.send {
+			position: absolute;
+			@include size(right, 20);
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: $mainRedTheme;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0;
+			margin: 0;
+			@include size(width, 45);
+			@include size(height, 45);
+			@include size(border-radius, 25);
+
+			.circular {
+				@include whiteColorIcon;
+			}
+
+			img {
+				@include size(width, 24);
+				@include size(height, 24);
+			}
+
+			&:disabled {
+				background-color: $lightTextColor;
+				cursor: auto;
+			}
+		}
+	}
+}

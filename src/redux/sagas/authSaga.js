@@ -5,7 +5,7 @@ import {
 } from 'redux-saga/effects';
 
 import api from '../../api/api';
-import { authSucceed, authFailed } from '../actions/auth';
+import { authFailed } from '../actions/auth';
 import { AUTH_REQUESTED } from '../actionTypes';
 
 function* authWorker({ payload: {type, request} }) {
@@ -13,9 +13,9 @@ function* authWorker({ payload: {type, request} }) {
 		const path = type === 'register'
 			? 'auth/register'
 			: 'auth/login';
-		const { data: { token, user } } = yield call(api.post, path, request);
+		const { data: { token } } = yield call(api.post, path, request);
 		localStorage.setItem('token', token);
-		yield put(authSucceed({ isLoggedIn: true, user }));
+		window.location.reload(false);
 	} catch (error) {
 		yield put(authFailed(error.response.data.message));
 	}

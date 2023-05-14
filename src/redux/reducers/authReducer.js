@@ -40,6 +40,11 @@ const authReducer = (state = initialState, action = null) => {
 			authUser: action.payload,
 			isLoggedIn: state.isLoggedIn,
 		};
+	case actionTypes.DROP_AUTH_ERROR:
+		return {
+			...state,
+			error: null,
+		};
 	default:
 		return state;
 	}

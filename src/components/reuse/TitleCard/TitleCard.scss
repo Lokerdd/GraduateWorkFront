@@ -1,4 +1,5 @@
 @import '../../../styles/constants.scss';
+@import '../../../styles/mixins.scss';
 
 .title-card {
 	position: relative;
@@ -34,15 +35,19 @@
 			calc(7/1440*100vw)
 			calc(10/1440*100vw);
 		color: $whiteColor;
+		@include size(font-size, 16);
+
+		img {
+			@include size(width, 24);
+			@include size(height, 24);
+		}
 	}
 
 	.genres {
-		border: solid $whiteColor;
+		border-top: solid $whiteColor;
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		border-bottom: none;
-		border-right: none;
 		display: flex;
 		color: $whiteColor;
 		list-style: none;
@@ -113,6 +118,7 @@
 			display: -webkit-box;
 			-webkit-line-clamp: 6;
 			-webkit-box-orient: vertical;
+			color: $whiteColor;
 		}
 	}
 }

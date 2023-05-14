@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
-import { authRequest } from '../../../../../redux/actions/auth';
+import { authRequest, dropError } from '../../../../../redux/actions/auth';
 
 import './Login.scss';
 
@@ -71,6 +71,7 @@ function Login({setModalType}) {
 						У вас ещё нет аккаунта?
 							<span
 								onClick={() => {
+									dispatch(dropError());
 									setModalType('register');
 								}}
 							>

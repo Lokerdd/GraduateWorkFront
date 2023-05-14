@@ -1,0 +1,10 @@
+@import '../../styles/mixins.scss';
+
+.user-profile {
+	@include size(padding-top, 60);
+
+	.profile-header {
+		@include header;
+		@include size(margin-bottom, 82);
+	}
+}

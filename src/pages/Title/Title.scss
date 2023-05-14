@@ -31,185 +31,40 @@
 		@include size(font-size, 24);
 		@include size(padding, 20);
 		@include size(margin-bottom, 30);
+		background-color: $mainRedTheme;
+		color: white;
+
+		&.loading {
+			justify-content: center;
+
+			.circular {
+				&.red {
+					@include mainRedIcon;
+				}
+				&.white {
+					@include whiteColorIcon;
+				}
+			}
+		}
 
 		img {
 			@include size(width, 32);
 			@include size(height, 32);
+			@include whiteColorIcon;
 		}
 
-		&.like {
-			background-color: $mainRedTheme;
-			color: white;
+		&.liked {
+			color: $mainRedTheme;
+			border: solid $mainRedTheme;
+			background-color: $whiteColor;
+			@include size(border-width, 2);
 			img {
-				@include whiteColorIcon;
+				@include mainRedIcon;
 			}
 		}
-	}
-
-	.title-data {
-		display: flex;
-		flex-direction: column;
-		@include size(row-gap, 30);
-		@include size(margin-bottom, 78);
-
-		li {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-
-			span {
-				@include size(font-size, 24);
-				@include size(line-height, 35);
-				font-weight: 600;
-
-				&.name {
-					color: $lightTextColor;
-				}
-
-				&.data {
-					color: $darkTextColor;
-				}
-			}
-		}
-	}
-
-
-	.video {
-		@include size(width, 1120);
-		@include size(height, 600);
-		@include size(margin-bottom, 10);
-	}
-	.player-controller {
-		display: flex;
-		@include size(column-gap, 20);
-		@include size(margin-bottom, 48);
-		.custom-select {
-			flex-grow: 1;
-		}
-	}
-
-	.rate {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		@include size(margin-bottom, 100);
-
-		.placeholder {
-			color: $lightTextColor;
-			@include size(font-size, 24);
-			@include size(line-height, 35);
-		}
-
-		.star-block {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			@include size(row-gap, 10);
-
-			ul {
-				display: flex;
-				@include size(column-gap, 40);
-
-				img {
-					@include size(width, 100);
-					@include size(height, 100);
-					@include lightGrayIcon;
-				}
-
-				.yellow img {
-					@include yellowIcon;
-				}
-			}
-		}
-
-		.data {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			@include size(row-gap, 10);
-
-			.rating {
-				.number {
-					@include size(font-size, 64);
-					@include size(line-height, 92);
-					font-weight: 900;
-					color: $mainRedTheme;
-					@include size(margin-right, 28);
-				}
-				.amount {
-					@include size(font-size, 24);
-					@include size(line-height, 35);
-					color: $grayTextColorSubtitle;
-				}
-			}
-		}
-
-
 	}
 
 	.title-block-header {
 		margin-left: 0;
-	}
-
-	.comments {
-		display: flex;
-		flex-direction: column;
-		@include size(row-gap, 60);
-
-		.comments-header {
-			@include size(font-size, 40);
-			@include size(line-height, 58);
-			color: $darkTextColor;
-			font-weight: 700;
-		}
-
-		.text-field {
-			position: relative;
-
-			input {
-				width: 100%;
-				@include size(height, 70);
-				border-radius: 0;
-				border: 1px solid $borderLightColor;
-				@include size(padding-left, 20);
-				@include size(padding-right, 80);
-				background-color: $searchStrokeBackground;
-				@include size(font-size, 16);
-
-				&:focus {
-					outline: none;
-				}
-			}
-
-			.send {
-				position: absolute;
-				@include size(right, 20);
-				top: 50%;
-				transform: translateY(-50%);
-				background-color: $mainRedTheme;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				padding: 0;
-				margin: 0;
-				@include size(width, 45);
-				@include size(height, 45);
-				@include size(border-radius, 25);
-
-				.circular {
-					@include whiteColorIcon;
-				}
-
-				img {
-					@include size(width, 24);
-					@include size(height, 24);
-				}
-
-				&:disabled {
-					background-color: $lightTextColor;
-					cursor: auto;
-				}
-			}
-		}
 	}
 }

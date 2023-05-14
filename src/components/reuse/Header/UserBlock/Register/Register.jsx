@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
-import { authRequest } from '../../../../../redux/actions/auth';
+import { authRequest, dropError } from '../../../../../redux/actions/auth';
 
 import './Register.scss';
 
@@ -101,6 +101,7 @@ function Register({setModalType}) {
 						У вас уже есть аккаунт?
 							<span
 								onClick={() => {
+									dispatch(dropError());
 									setModalType('login');
 								}}
 							>
@@ -108,7 +109,7 @@ function Register({setModalType}) {
 							</span>
 						</div>
 						{error && (
-							<div className='error'>Не удалось зарегистрироваться</div>
+							<div className='error'>{error[Object.keys(error)[0]][0]}</div>
 						)}
 						<button type='submit' className='submit-button'>
 						ЗАРЕГИСТРИРОВАТЬ ПРОФИЛЬ

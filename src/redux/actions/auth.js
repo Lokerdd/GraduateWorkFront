@@ -22,3 +22,7 @@ export const authFailed = (error) => ({
 	type: actionTypes.AUTH_FAILED,
 	error,
 });
+
+export const dropError = () => ({
+	type: actionTypes.DROP_AUTH_ERROR,
+});

@@ -1,0 +1,8 @@
+@import '../../styles/mixins.scss';
+
+.main-page .circular {
+	position: absolute;
+	top: 25%;
+	@include size(left, 660);
+	@include mainRedIcon;
+}

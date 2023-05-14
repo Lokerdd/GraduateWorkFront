@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
 import './Premier.scss';
+import { Link } from 'react-router-dom';
 
 function Premier({ data }) {
 	if (data) {
@@ -12,10 +13,10 @@ function Premier({ data }) {
 						<span className='name'>{data.name}</span>
 						<span className='seasons'>{`Сезон ${data.season}`}</span>
 						<span className='description'>{data.description}</span>
-						<button className='watch'>
+						<Link to={`title/${data.id}`} className='watch'>
 							<span>Начать просмотр</span>
 							<img src="/assets/icons/play-icon.svg" />
-						</button>
+						</Link>
 					</div>
 				</div>
 				<img 

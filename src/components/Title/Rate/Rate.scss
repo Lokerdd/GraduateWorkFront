@@ -1,0 +1,58 @@
+@import '../../../styles/mixins.scss';
+
+.rate-block {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	@include size(margin-bottom, 100);
+
+	.placeholder {
+		color: $lightTextColor;
+		@include size(font-size, 24);
+		@include size(line-height, 35);
+	}
+
+	.star-block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include size(row-gap, 10);
+
+		ul {
+			display: flex;
+			@include size(column-gap, 40);
+
+			img {
+				@include size(width, 100);
+				@include size(height, 100);
+				@include lightGrayIcon;
+			}
+
+			.yellow img {
+				@include yellowIcon;
+			}
+		}
+	}
+
+	.data {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include size(row-gap, 10);
+
+		.rating {
+			.number {
+				@include size(font-size, 64);
+				@include size(line-height, 92);
+				font-weight: 900;
+				color: $mainRedTheme;
+				@include size(margin-right, 28);
+			}
+			.amount {
+				@include size(font-size, 24);
+				@include size(line-height, 35);
+				color: $grayTextColorSubtitle;
+			}
+		}
+	}
+}

@@ -5,6 +5,7 @@ const initialState = {
 	alsoCool: [],
 	comments: [],
 	isCommentsLoading: false,
+	isLikeLoading: false,
 	seasons: [],
 	isLoading: false,
 	error: null,
@@ -32,10 +33,12 @@ const titlePageReducer = (state = initialState, action = null) => {
 				image: data.image,
 				name: data.name,
 				rate: data.rate,
+				userRate: data.userRate,
 				type: data.type,
 				release: data.release,
 				status: data.status,
 				studio: data.studio,
+				isLiked: data.isLiked
 			},
 			alsoCool: data.alsoCool,
 			comments: data.comments,
@@ -53,6 +56,12 @@ const titlePageReducer = (state = initialState, action = null) => {
 		return {
 			...state,
 			isCommentsLoading: true,
+		};
+
+	case actionTypes.LIKE_TITLE:
+		return {
+			...state,
+			isLikeLoading: true,
 		};
 
 	default:

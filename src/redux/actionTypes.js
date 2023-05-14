@@ -22,9 +22,14 @@ export const TITLE_FAILED = 'TITLE_FAILED';
 
 export const SEND_COMMENT = 'SEND_COMMENT';
 
+export const RATE_TITLE = 'RATE_TITLE';
+
+export const LIKE_TITLE = 'LIKE_TITLE';
+
 export const AUTH_REQUESTED = 'AUTH_REQUESTED';
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_FAILED = 'AUTH_FAILED';
+export const DROP_AUTH_ERROR = 'DROP_AUTH_ERROR';
 
 export const VERIFY_REQUESTED = 'VERIFY_REQUESTED';
 

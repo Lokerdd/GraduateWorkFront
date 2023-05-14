@@ -1,0 +1,28 @@
+@import '../../../styles/mixins.scss';
+
+.title-data {
+	display: flex;
+	flex-direction: column;
+	@include size(row-gap, 30);
+	@include size(margin-bottom, 78);
+
+	li {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		span {
+			@include size(font-size, 24);
+			@include size(line-height, 35);
+			font-weight: 600;
+
+			&.name {
+				color: $lightTextColor;
+			}
+
+			&.data {
+				color: $darkTextColor;
+			}
+		}
+	}
+}
