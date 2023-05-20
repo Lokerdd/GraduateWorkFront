@@ -1,0 +1,68 @@
+@import '../../../styles/constants.scss';
+@import '../../../styles/mixins.scss';
+
+.user-profile-block {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include size(margin-bottom, 60);
+
+	.user-info {
+		display: flex;
+		@include size(column-gap, 19);
+		align-items: center;
+
+		.avatar {
+			@include size(width, 170);
+			@include size(height, 170);
+			@include size(font-size, 100);
+		}
+
+		.data {
+			display: flex;
+			flex-direction: column;
+			@include size(row-gap, 10);
+
+			.name {
+				@include size(font-size, 40);
+				@include size(line-height, 56);
+				font-weight: 900;
+				color: $darkTextColor;
+			}
+
+			.email {
+				@include size(font-size, 24);
+				@include size(line-height, 35);
+				color: $lightTextColor;
+			}
+		}
+	}
+
+	.edit-profile {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		box-sizing: border-box;
+		border: solid $mainRedTheme;
+		@include size(border-width, 2);
+		@include size(width, 455);
+		@include size(padding, 20);
+		@include size(font-size, 24);
+		color: $mainRedTheme;
+
+		img {
+			@include mainRedIcon;
+			@include size(width, 32);
+			@include size(height, 32);
+		}
+
+		&:hover {
+			background-color: $mainRedTheme;
+			color: $whiteColor;
+
+			img {
+				@include whiteColorIcon;
+			}
+		}
+	}
+}

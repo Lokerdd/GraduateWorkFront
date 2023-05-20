@@ -1,4 +1,5 @@
 @import '../../styles/mixins.scss';
+@import '../../styles/constants.scss';
 
 .user-profile {
 	@include size(padding-top, 60);
@@ -6,5 +7,36 @@
 	.profile-header {
 		@include header;
 		@include size(margin-bottom, 82);
+	}
+
+	.title-header {
+		color: $darkTextColor;
+		font-weight: 600;
+		@include size(font-size, 40);
+		@include size(line-height, 58);
+		@include size(margin-bottom, 60);
+	}
+
+	.catalog-title-block {
+		@include size(margin-bottom, 60);
+	}
+
+	.load-more-button {
+		@include size(width, 455);
+		@include size(height, 70);
+		background-color: $mainRedTheme;
+		color: $whiteColor;
+		@include size(font-size, 24);
+		margin-left: 50%;
+		transform: translateX(-50%);
+		@include size(margin-bottom, 60);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include size(padding, 20);
+
+		.circular {
+			@include whiteColorIcon;
+		}
 	}
 }

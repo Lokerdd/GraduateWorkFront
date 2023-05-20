@@ -11,6 +11,8 @@ import titlePageSaga from './titlePageSaga';
 import sendCommentSaga from './sendCommentSaga';
 import rateTitleSaga from './rateTitleSaga';
 import likeTitleSaga from './likeTitleSaga';
+import likedTitlesSaga from './likedTitlesSaga';
+import editProfileSaga from './editProfileSaga';
 
 function* rootSaga() {
 	yield all([
@@ -26,6 +28,8 @@ function* rootSaga() {
 		sendCommentSaga(),
 		rateTitleSaga(),
 		likeTitleSaga(),
+		likedTitlesSaga(),
+		editProfileSaga(),
 	]);
 }
   

@@ -26,7 +26,6 @@
 
 		.submit-button {
 			@include authButton;
-			@include size(margin-bottom, 20);
 		}
 
 		.social-buttons {

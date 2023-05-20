@@ -85,15 +85,6 @@ function Login({setModalType}) {
 							ВОЙТИ В ПРОФИЛЬ
 							<img src="/assets/icons/auth-icon.svg" />
 						</button>
-						<div className='enter-social'>Вход через социальные сети</div>
-						<div className='social-buttons'>
-							<button>
-								<img src="/assets/icons/vk-icon.svg" />
-							</button>
-							<button>
-								<img src="/assets/icons/google-icon.svg" />
-							</button>
-						</div>
 					</Form>
 				)}
 			</Formik>

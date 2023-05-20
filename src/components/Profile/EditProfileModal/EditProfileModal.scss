@@ -1,0 +1,157 @@
+@import '../../../styles/auth.scss';
+
+.edit-profile-modal {
+	width: 100vw;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	@include size(padding-top, 100);
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+
+	.dark-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba($color: #000000, $alpha: 0.5);
+	}
+
+	.window {
+		background-color: $whiteColor;
+		position: relative;
+		height: min-content;
+
+		.line {
+			width: 100%;
+			height: 1px;
+			background-color: $borderLightColor;
+			position: absolute;
+			@include size(top, 98);
+			left: 0;
+		}
+
+		.padding {
+			@include size(padding, 20);
+			@include size(padding-bottom, 60);
+			color: $darkTextColor;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			
+			.modal-header {
+				@include size(font-size, 40);
+				@include size(line-height, 58);
+				@include size(margin-bottom, 55);
+				font-weight: 600;
+				align-self: flex-start;
+			}
+
+			.edit-avatar {
+				.avatar {
+					@include size(width, 200);
+					@include size(height, 200);
+					@include size(font-size, 140);
+					@include size(margin-bottom, 40);
+					position: relative;
+
+					&:hover::after {
+						content: '';
+						background-color: rgba($color: #000000, $alpha: 0.5);
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						background-image: url('/../public/assets/icons/search-icon.svg');
+						@include size(background-size, 100);
+						background-repeat: no-repeat;
+						background-position: center;
+					}
+				}
+
+				input {
+					display: none;
+				}
+			}
+
+			.edit-form {
+				display: flex;
+				flex-direction: column;
+
+				.field {
+					display: flex;
+					@include size(column-gap, 40);
+					align-items: center;
+					align-self: end;
+
+					p {
+						@include size(font-size, 24);
+						@include size(line-height, 35);
+					}
+
+					input {
+						background-color: $searchStrokeBackground;
+						border: 1px solid $borderLightColor;
+						@include size(width, 430);
+						@include size(padding, 20);
+						@include size(padding-top, 10);
+						@include size(padding-bottom, 10);
+						@include size(font-size, 24);
+						@include size(line-height, 35);
+						font-weight: 700;
+						outline: none;
+						color: $darkTextColor;
+					}
+
+					&:last-of-type {
+						margin-bottom: calc(60/1440*100vw) !important;
+					}
+				}
+
+				.error {
+					align-self: center;
+					color: $mainRedTheme;
+				}
+
+				.edit-error {
+					align-self: center;
+					color: $mainRedTheme;
+					@include size(font-size, 24);
+					@include size(line-height, 35);
+					font-weight: 500;
+				}
+
+				button {
+					background-color: $mainRedTheme;
+					color: $whiteColor;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					align-self: end;
+					@include size(width, 455);
+					@include size(padding, 20);
+					@include size(font-size, 24);
+					@include size(line-height, 35);
+					@include size(margin-top, 20);
+
+					img {
+						@include size(width, 32);
+						@include size(height, 32);
+					}
+
+					&.loading {
+						justify-content: center;
+
+						.circular {
+							@include whiteColorIcon;
+						}
+					}
+				}
+			}
+		}
+	}
+}
