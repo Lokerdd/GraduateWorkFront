@@ -13,6 +13,7 @@ import rateTitleSaga from './rateTitleSaga';
 import likeTitleSaga from './likeTitleSaga';
 import likedTitlesSaga from './likedTitlesSaga';
 import editProfileSaga from './editProfileSaga';
+import searchSaga from './searchSaga';
 
 function* rootSaga() {
 	yield all([
@@ -30,6 +31,7 @@ function* rootSaga() {
 		likeTitleSaga(),
 		likedTitlesSaga(),
 		editProfileSaga(),
+		searchSaga(),
 	]);
 }
   

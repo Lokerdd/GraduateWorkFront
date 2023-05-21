@@ -46,6 +46,10 @@
 			border-color: $mainRedTheme;
 		}
 
+		.search-button {
+			@include lightGrayIcon;
+		}
+
 		.user {
 			.sign-in {
 				color: $mainRedTheme;

@@ -14,9 +14,7 @@ function Player({ seasonArray }) {
 	}, [seasonArray]);
 
 	useEffect(() => {
-		setEpisode(seasonArray.find((item) => 
-			item.season === season
-		)?.episodes[0].number);
+		setEpisode(seasonArray[0]?.episodes[0].number);
 	}, [season]);
 
 	const seasonOptions = seasonArray.length ? seasonArray.map((item) => {
@@ -47,9 +45,9 @@ function Player({ seasonArray }) {
 				{ seasonOptions.find((item) => item.value === season) && (
 					<CustomSelect 
 						options={seasonOptions}
-						placeholder={`Сезон ${season}`}
 						isNotMulti
 						setFilter={setSeason}
+						value={seasonOptions.find(item => item.value = season)}
 					/>
 				)}
 				{episodeOptions && episode && (
@@ -58,6 +56,7 @@ function Player({ seasonArray }) {
 						placeholder={`Серия ${episode}`}
 						isNotMulti
 						setFilter={setEpisode}
+						value={episodeOptions.find(item => item.value = episode)}
 					/>
 				)}
 			</div>

@@ -37,13 +37,99 @@
     align-items: center;
 		@include size(width, 390);
 
-    .search-field {
-		  @include size(height, 34);
-      border: none;
+    .search {
       width: 100%;
-      padding: 0 calc(20/1440*100vw);
-      background-color: $searchStrokeBackground;
-      @include size(font-size, 12);
+      position: relative;
+
+      .search-field {
+        @include size(height, 34);
+        border: none;
+        width: 100%;
+        padding: 0 calc(20/1440*100vw);
+        background-color: $searchStrokeBackground;
+        @include size(font-size, 12);
+        outline: none;
+
+        &::placeholder {
+          color: $lightTextColor;
+        }
+      }
+
+      .output-list {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        background-color: white;
+        border: solid $borderLightColor;
+        border-top: none;
+        @include size(border-width, 2);
+
+        .message {
+          @include size(padding-left, 10);
+          font-weight: 400;
+          @include size(font-size, 12);
+          color: $lightTextColor;
+        }
+
+        .title {
+          display: flex;
+          align-items: center;
+          @include size(padding, 10);
+          @include size(padding-left, 20);
+          @include size(padding-right, 20);
+          @include size(column-gap, 10);
+
+          &:not(:last-child) {
+            border-bottom: 1px solid $borderLightColor;
+          }
+
+          &:hover {
+            background-color: $searchStrokeBackground;
+          }
+
+          .image {
+            @include size(width, 40);
+            @include size(height, 40);
+            object-fit: cover;
+          }
+
+          .data {
+            .name {
+              color: $darkTextColor;
+              white-space: nowrap;
+              @include size(width, 180);
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            .genres {
+              @include size(font-size, 12);
+              @include size(line-height, 16);
+              font-weight: 400;
+            }
+          }
+
+          .rate {
+            margin-left: auto;
+            font-weight: 400;
+            @include size(font-size, 12);
+            @include size(line-height, 16);
+            display: flex;
+            align-items: center;
+
+            span {
+              font-weight: 600;
+              color: $mainRedTheme;
+              @include size(font-size, 16);
+              @include size(line-height, 24);
+            }
+
+            img {
+              @include size(width, 32);
+              @include size(height, 32);
+            }
+          }
+        }
+      }
     }
 
     .close-search {

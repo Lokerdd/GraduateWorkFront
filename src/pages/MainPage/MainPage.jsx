@@ -47,12 +47,12 @@ function MainPage() {
 			/>
 			<TitleBlock
 				header='ПОПУЛЯРНАЯ РОМАНТИКА'
-				link='/catalog?genre=romantic'
+				link='/catalog?genre=1'
 				titles={romantic}
 			/>
 			<TitleBlock
 				header='ПОПУЛЯРНАЯ КОМЕДИЯ'
-				link='/catalog?genre=comedy'
+				link='/catalog?genre=4'
 				titles={comedy}
 			/>
 		</div>

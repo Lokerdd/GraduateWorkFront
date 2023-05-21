@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 function GenrePage({
 	genre: {
+		id,
 		name,
 		description,
 		image,
@@ -12,7 +13,7 @@ function GenrePage({
 	}
 }) {
 	return (
-		<Link to='/catalog'>
+		<Link to={`/catalog?genre=${id}`}>
 			<div 
 				className='genre-card'
 				style={{backgroundColor: `#${color}`}}

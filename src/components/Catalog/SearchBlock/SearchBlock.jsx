@@ -3,6 +3,7 @@ import React, { memo, useEffect, useState } from 'react';
 import CustomSelect from '../../reuse/CustomSelect';
 
 import './SearchBlock.scss';
+import { useSearchParams } from 'react-router-dom';
 
 function SearchBlock({setParams}) {
 	const [genres, setGenres] = useState('');
@@ -18,6 +19,8 @@ function SearchBlock({setParams}) {
 		}));
 	}, [genres, types, statuses]);
 
+	const [query] = useSearchParams();
+
 	const genreOptions = [
 		{value: '1', label: 'Романтика'},
 		{value: '2', label: 'Приключения'},
@@ -32,6 +35,13 @@ function SearchBlock({setParams}) {
 		{value: '11', label: 'Фантастика'},
 		{value: '12', label: 'Фэнтези'},
 	];
+
+	useEffect(() => {
+		if (query.get('genre')) {
+			setGenres(query.get('genre'));
+		}
+	}, []);
+
 
 	const typeOptions = [
 		{value: 'movie', label: 'Полнометражный фильм'},
@@ -52,6 +62,7 @@ function SearchBlock({setParams}) {
 				options={genreOptions}
 				placeholder='Жанр'
 				setFilter={setGenres}
+				value={[genreOptions.find(item => item.value == genres)]}
 			/>
 			<CustomSelect 
 				options={typeOptions}

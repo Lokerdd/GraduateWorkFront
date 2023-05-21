@@ -24,7 +24,7 @@ function CustomSelect({
 			classNamePrefix='custom-select'
 			closeMenuOnSelect={false}
 			onChange={handleChange}
-			defaultInputValue={value}
+			defaultValue={value}
 		/>
 	);
 }
