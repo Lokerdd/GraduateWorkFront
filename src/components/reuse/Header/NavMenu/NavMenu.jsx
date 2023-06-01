@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -6,6 +6,21 @@ import { searchRequest } from '../../../../redux/actions/search';
 
 import './NavMenu.scss';
 import { CircularProgress } from '@mui/material';
+
+function useOutsideAlerter(ref, setIsModalOpen, setText) {
+	useEffect(() => {
+		function handleClickOutside(event) {
+			if (ref.current && !ref.current.contains(event.target)) {
+				setText('');
+				setIsModalOpen(false);
+			}
+		}
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, [ref]);
+}
 
 function NavMenu() {
 	const [isSearching, setIsSearching] = useState(false);
@@ -26,12 +41,15 @@ function NavMenu() {
 
 	useEffect(() => {
 		const delaySearch = setTimeout(() => {
-			console.log(searchText);
 			dispatch(searchRequest(searchText));
 		}, 500);
 
 		return () => clearTimeout(delaySearch);
 	}, [searchText]);
+
+	const searchRef = useRef(null);
+
+	useOutsideAlerter(searchRef, setIsSearching, setSearchText);
 
 	return (
 		<div className='links'>
@@ -48,7 +66,7 @@ function NavMenu() {
 					</button>
 				</>
 			) : (
-				<div className='search-bar'>
+				<div className='search-bar' ref={searchRef}>
 					<div className='search'>
 						<input 
 							type='text'
@@ -68,7 +86,7 @@ function NavMenu() {
 								<div className='message'>{searchText ? 'Ничего не найдено' : 'Введите название произведения'}</div>
 							)}
 							{searchTitles.length ? searchTitles.map((item) => (
-								<Link className='title' key={item.name}>
+								<Link to={`title/${item.id}`} className='title' key={item.name}>
 									<img className='image' src={item.image} />
 									<div className='data'>
 										<div className='name'>{item.name}</div>

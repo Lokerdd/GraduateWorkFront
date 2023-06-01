@@ -14,7 +14,7 @@ import './Profile.scss';
 function Profile() {
 	const [page, setPage] = useState(1);
 	const [isLastPage, setIsLastPage] = useState(false);
-	const [isModal, setIsModal] = useState(true);
+	const [isModal, setIsModal] = useState(false);
 	const dispatch = useDispatch();
 
 	const {
